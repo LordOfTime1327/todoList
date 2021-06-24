@@ -1,0 +1,5 @@
+.footer {
+  @include e(par) {
+    font-size: rem(16px);
+  }
+}

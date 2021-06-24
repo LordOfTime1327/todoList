@@ -1,0 +1,47 @@
+.allBtnBox {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+
+  margin-bottom: 20px;
+
+  @include e(btn) {
+    display: block;
+    flex: 0 0 100%;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    font-size: rem(16px);
+    color: #000;
+    text-align: center;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background: transparent;
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+
+    &:hover,
+    &:focus,
+    &:active {
+      transform: translateY(-3px);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include m(checkAll) {
+      background: lightskyblue;
+    }
+    @include m(importantAll) {
+      background: lightgreen;
+    }
+    @include m(deleteAll) {
+      background: lightcoral;
+    }
+    @include m(deleteChecked) {
+      background: lightpink;
+    }
+  }
+}

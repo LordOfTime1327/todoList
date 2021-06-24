@@ -1,0 +1,84 @@
+.controll {
+  @include e(addBox) {
+    margin-bottom: 20px;
+  }
+
+  @include e(col) {
+    position: relative;
+    width: 100%;
+    // width: 50%;
+    height: 30px;
+    margin-bottom: 10px;
+  }
+
+  @include e(label) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 30px;
+    padding: 0 10px;
+    font-size: rem(18px);
+    display: block;
+    transition: 0.5s;
+    pointer-events: none;
+    color: orange;
+  }
+
+  @include e(line) {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: orange;
+    transition: 0.5s;
+    border-radius: 2px;
+    pointer-events: none;
+  }
+
+  @include e(addInput) {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    font-size: rem(16px);
+    padding: 0 10px;
+    z-index: 1;
+    color: #000;
+
+    &:focus + .controll__label,
+    &:valid + .controll__label {
+      font-size: rem(14px);
+      top: -25px;
+      left: -10px;
+    }
+
+    &:focus ~ .controll__line,
+    &:valid ~ .controll__line {
+      height: 100%;
+    }
+  }
+
+  @include e(addBtn) {
+    display: block;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    background: orange;
+    color: #000;
+    border-radius: 5px;
+    font-size: rem(16px);
+    padding: 8px 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+
+    &:hover,
+    &:focus,
+    &:active {
+      transform: translateY(-3px);
+    }
+  }
+}

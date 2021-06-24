@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>todoList</title>
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__logoBox">
+          <h1 class="header__logo">ToDo List</h1>
+        </div>
+        <div class="header__menuBox">
+          <i class="fas fa-cog header__settings"></i>
+
+          <ul class="menu menu_dark">
+            <li class="menu__item">
+              Dark mode:
+              <i id="darkMode" class="fas fa-moon menu__icon"></i>
+            </li>
+            <li class="menu__item">
+              Style:
+              <i id="tableStyle" class="fas fa-table menu__icon"></i>
+              <i id="listStyle" class="fas fa-th-list menu__icon"></i>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <section class="controllBox">
+      <div class="container">
+        <form action="" class="controll">
+          <div class="controll__addBox">
+            <div class="controll__col">
+              <input
+                type="text"
+                id="addInput"
+                class="controll__addInput"
+                required
+                autocomplete="off"
+              />
+              <label for="addInput" class="controll__label"
+                >Enter task to do</label
+              >
+              <span class="controll__line"></span>
+            </div>
+
+            <button class="controll__addBtn">
+              <i class="fas fa-plus"></i>
+              Add
+            </button>
+          </div>
+
+          <div class="controll__btnBox allBtnBox">
+            <button class="allBtnBox__btn allBtnBox__btn_checkAll checkAll">
+              <i class="fas fa-check-square"></i>
+              Check All
+            </button>
+            <button
+              class="allBtnBox__btn allBtnBox__btn_importantAll importantAll"
+            >
+              <i class="fas fa-exclamation"></i>
+              Important All
+            </button>
+            <button class="allBtnBox__btn allBtnBox__btn_deleteAll deleteAll">
+              <i class="fas fa-trash"></i>
+              Delete All
+            </button>
+            <button
+              class="allBtnBox__btn allBtnBox__btn_deleteChecked deleteChecked"
+            >
+              <i class="fas fa-trash"></i>
+              Delete Checked
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="todoListBox">
+      <div class="container">
+        <ul class="todoList"></ul>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__poweredBox">
+          <p class="footer__par">
+            Powered by
+            <a
+              href="https://www.linkedin.com/in/dmitryi-kaminskyi-224254189/"
+              target="blank"
+              class="footer__link"
+            >
+              <i class="fab fa-linkedin"></i>
+              Dmitryi Kaminskyi</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <div class="preloader"><div class="preloader__box"></div></div>
+
+    <div class="alert">
+      <h2 class="alert__caption">Alert!</h2>
+      <p class="alert__text"></p>
+    </div>
+    <div class="bg"></div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

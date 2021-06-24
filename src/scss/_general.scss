@@ -1,0 +1,150 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+
+  background: #f2f2f2;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.empty {
+  margin: 0 5px;
+  font-size: rem(20px);
+}
+
+.bg {
+  position: absolute;
+  z-index: 9998;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: rgba(#000, 0.9);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.3s ease;
+}
+.alert {
+  position: absolute;
+  z-index: 9999;
+  top: 50%;
+  left: 50%;
+  min-width: 250px;
+  transform: translate(-50%, -50%) scale(0);
+  background: #fff;
+  border-radius: 7px;
+  text-align: center;
+  padding: 15px 20px;
+  transition: transform 0.3s ease;
+
+  @include e(caption) {
+    font-size: rem(28px);
+    margin-bottom: 15px;
+  }
+  @include e(text) {
+    font-size: rem(20px);
+  }
+
+  @include m(active) {
+    transform: translate(-50%, -50%) scale(1);
+
+    & ~ .bg {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+}
+
+.darkMode {
+  background: rgba($color: #000000, $alpha: 0.8);
+
+  & .empty {
+    color: #ccc;
+  }
+
+  & .todoList {
+    @include e(btn) {
+      color: #222;
+    }
+  }
+
+  & .alert {
+    background: #000;
+    color: #ccc;
+    box-shadow: 0 0 7px #fff;
+  }
+
+  & .preloader {
+    background: #222;
+  }
+  & .preloader__circle {
+    background: #f2f2f2;
+  }
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99999;
+  background: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.4s, z-index 0s 0.4s;
+
+  @include e(box) {
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: relative;
+  }
+
+  @include e(item) {
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 100%;
+  }
+  @include e(circle) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: #222;
+    border-radius: 50%;
+    transform: scale(0);
+
+    animation: preloader infinite;
+  }
+}
+
+@keyframes preloader {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(0);
+  }
+}

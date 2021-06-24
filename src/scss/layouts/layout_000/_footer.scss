@@ -1,0 +1,16 @@
+.footer {
+  padding: 10px 0;
+
+  @include e(par) {
+    font-size: rem(14px);
+  }
+
+  @include e(link) {
+    font-size: inherit;
+    color: #000;
+
+    &:active {
+      color: darkred;
+    }
+  }
+}

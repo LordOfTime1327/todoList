@@ -1,0 +1,9 @@
+.allBtnBox {
+  @include e(btn) {
+    flex: 0 0 calc(50% - 5px);
+
+    &:last-child {
+      margin-bottom: auto;
+    }
+  }
+}

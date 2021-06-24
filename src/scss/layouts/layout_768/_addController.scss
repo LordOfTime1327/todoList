@@ -1,0 +1,26 @@
+.controll {
+  @include e(col) {
+    height: 40px;
+  }
+  @include e(label) {
+    font-size: rem(20px);
+    line-height: 40px;
+  }
+  @include e(line) {
+    width: 50%;
+  }
+  @include e(addInput) {
+    width: 50%;
+    font-size: rem(20px);
+
+    &:focus + .controll__label,
+    &:valid + .controll__label {
+      font-size: rem(16px);
+      top: -30px;
+      left: -10px;
+    }
+  }
+  @include e(addBtn) {
+    font-size: rem(18px);
+  }
+}

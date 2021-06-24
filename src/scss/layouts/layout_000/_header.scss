@@ -1,0 +1,80 @@
+.header {
+  padding: 10px 0;
+  margin-bottom: 25px;
+
+  & .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @include e(logo) {
+    font-size: rem(30px);
+  }
+
+  @include e(menuBox) {
+    position: relative;
+  }
+
+  @include e(settings) {
+    font-size: rem(24px);
+    cursor: pointer;
+    transition: transform 1s ease;
+
+    &:hover {
+      transform: rotate(120deg);
+    }
+  }
+}
+
+.menu {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  list-style: none;
+  top: 40px;
+  right: 0;
+  min-width: 170px;
+  padding: 15px;
+  border-radius: 5px;
+
+  @include m(active) {
+    display: block;
+  }
+
+  @include m(light) {
+    color: #222;
+    background: #eee;
+    box-shadow: 0 0 4px rgba($color: #000, $alpha: 0.5);
+  }
+  @include m(dark) {
+    color: #eee;
+    background: rgba($color: #000000, $alpha: 0.5);
+    box-shadow: 0 0 4px rgba($color: #fff, $alpha: 0.5);
+  }
+
+  @include e(item) {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    font-size: rem(18px);
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  @include e(icon) {
+    font-size: rem(18px);
+    margin: 0 7px;
+    cursor: pointer;
+  }
+}
+
+.active_light {
+  text-shadow: 0 0 2px #000, 0 0 4px #ccc, 0 0 6px #ccc, 0 0 8px #ccc;
+}
+.active_dark {
+  text-shadow: 0 0 5px #000;
+}
